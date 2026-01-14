@@ -1,0 +1,6 @@
+[
+  {"name": "diamond", "id": 1234, "properties": {"a":[], "b":123}},
+  {"name": "dirt", "id": 5678, "properties": {"a":[], "b":456}},
+  {"name": "gold", "id": 9012, "properties": {"a":[], "b":789}},
+  {"name": "iron", "id": 3456, "properties": {"a":[], "b":012}}
+]

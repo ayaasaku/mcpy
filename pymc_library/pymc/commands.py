@@ -1,7 +1,7 @@
 # pymc/commands.py
 from .errors import validate_item, validate_block
 from .entities import Entity
-from .core import Var
+from .core import Var, MCFunction
 
 # --------------------------
 # ✅ HELPER: Add minecraft: namespace to MC IDs (auto-fix)

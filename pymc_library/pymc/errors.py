@@ -1,7 +1,5 @@
-# pymc/errors.py
-# --------------------------
-# ✅ CUSTOM ERROR CLASSES (hierarchical, easy to catch)
-# --------------------------
+import json
+
 class PyMCError(Exception):
     """Base error for all PyMC library errors (parent class)"""
     pass
@@ -18,8 +16,12 @@ class PyMCValidationError(PyMCError):
 # ✅ VALIDATION DATABASES (MC vanilla valid values)
 # --------------------------
 # Add more items/blocks/entities as needed (expand this list easily)
-VALID_MC_ITEMS = {"diamond", "iron_sword", "golden_apple", "stick", "stone", "dirt", "grass_block"}
-VALID_MC_BLOCKS = {"stone", "dirt", "grass_block", "cobblestone", "oak_planks"}
+with open(".data/mc_items.json", 'r', encoding="utf-8") as f:
+    items_list: list = json.load(f)
+VALID_MC_ITEMS = {item["name"].lower() for item in items_list}
+with open(".data/mc_blocks.json", 'r', encoding="utf-8") as f:
+    blocks_list: list = json.load(f)
+VALID_MC_BLOCKS = {block["name"].lower() for block in blocks_list}
 VALID_MC_SELECTORS = {"@a", "@p", "@s", "@e", "@r"}
 VALID_OPERATORS = {"==", "!=", "<", ">", "<=", ">="}
 

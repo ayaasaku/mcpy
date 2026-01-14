@@ -1,5 +1,5 @@
 # pymc/core.py
-from main.errors import PyMCValidationError, validate_operator
+from .errors import PyMCValidationError, validate_operator
 
 # --------------------------
 # ✅ JMC's "var x = 0" → PyMC Var CLASS (scoreboard-backed variables)
